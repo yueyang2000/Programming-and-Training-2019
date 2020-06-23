@@ -1,0 +1,296 @@
+<html>
+<head>
+<head>
+    <meta charset="utf-8">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="//mat1.gtimg.com/pingjs/ext2020/nbastats/teamInfo/2018/styles/main-6a643d80ef.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
+    <link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/post.css">
+    <style>
+    #logo
+    {
+        width:60px;
+    }
+    </style>
+</head>
+</head>
+<body>
+{% include 'header.html' %}
+<div align="center" >
+    <div style="height:150px;width:300px; display:inline-block;background-color:white;margin-right:30px;font-size:25px;">
+            <img src="{{photo}}">
+            <p>{{name}}</p>
+    </div>
+    <div style="height:150px; width:350px; display:inline-block;background-color:white;font-size:20px;" align="center">
+        <p>{{info1}}</p>
+        <p>{{info2}}</p>
+        <p>{{info3}}</p>
+        <p>{{info4}}</p>
+    </div>
+    <div style=" height:150px; width:300px; display:inline-block;background-color:white;margin-left:30px;font-size:20px;">
+        <p>{{intro}}
+    </div>
+</div>
+<link rel="stylesheet" href="static/css/table.css">
+<div class="player_list" align = center>
+    <h2>球员名单</h2>
+<table class="gridtable">
+<tr>
+    <td>
+        <div align="center">
+            <img src="{{player1_photo}}">
+        </div>
+        <p align="center">{{player1}}</p>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player2_photo}}">
+        <p align="center">{{player2}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player3_photo}}">
+        <p align="center">{{player3}}</p>
+    </td>
+    </div>
+    <td>
+        <div align="center">
+        <img src="{{player4_photo}}">
+        <p align="center">{{player4}}</p>
+    </td>
+    </div>
+    <td>
+        <div align="center">
+        <img src="{{player5_photo}}">
+        <p align="center">{{player5}}</p>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div align="center">
+        <img src="{{player6_photo}}">
+        <p align="center">{{player6}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player7_photo}}">
+        <p align="center">{{player7}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player8_photo}}">
+        <p align="center">{{player8}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player9_photo}}">
+        <p align="center">{{player9}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player10_photo}}">
+        <p align="center">{{player10}}</p>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div align="center">
+        <img src="{{player11_photo}}">
+        <p align="center">{{player11}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player12_photo}}">
+        <p align="center">{{player12}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player13_photo}}">
+        <p align="center">{{player13}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player14_photo}}">
+        <p align="center">{{player14}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player15_photo}}">
+        <p align="center">{{player15}}</p>
+    </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div align="center">
+        <img src="{{player16_photo}}">
+        <p align="center">{{player16}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player17_photo}}">
+        <p align="center">{{player17}}</p>
+        </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player18_photo}}">
+        <p align="center">{{player18}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player19_photo}}">
+        <p align="center">{{player19}}</p>
+    </div>
+    </td>
+    <td>
+        <div align="center">
+        <img src="{{player20_photo}}">
+        <p align="center">{{player20}}</p>
+    </div>
+    </td>
+</tr>
+</table>
+</div>
+
+<link rel="stylesheet" type="text/css" href="/static/css/search.css">
+<div class="container", align = center>
+    <h2>有关新闻</h2>
+    <div class="row">
+        <!-- <div class="col-md-6"> -->
+            <div class="dropdown result" style="font-size:15px;">
+                共<span id="len"></span>条有关 {{short_name}} 的新闻
+            </div>
+            <div class="brief-list" style="font-size:20px;"></div>
+            <ul class="pagination"></ul>
+        <!-- </div> -->
+    </div>
+</div>
+<script>
+var post_list = [];
+var page_size = 6;
+var page_limit = 0;
+var page_number = 7;
+var page = 0;
+var ci = [];
+function createBrief(data) {
+    var s = '';
+    s += "<div class='the-brief'>";
+    s += "<h3 class='brief-title' style='font-size:25px;'><a href='{% url 'get_post' %}?id="+ String(data['NID']) + "' target='_blank' class='brief-title-inner'>" + data['title'] + "</a></h3>";
+    //s += "<div class='brief-comment'>" + data['time'] + " - //" + data['source'] + "</div>";
+    s += "<p class='brief-content'>" + data['brief'] + '</p>';
+    s += "</div>";
+    return s;
+}
+function updBrief() {
+    $('.brief-list').empty();
+    var ask_list = {};
+    var bg = (page - 1) * page_size;
+    var ed = page * page_size;
+    if (bg >= post_list.length)
+        return;
+    if (ed > post_list.length)
+        ed = post_list.length;
+    for (var i = bg; i < ed; ++i) {
+        ask_list['' + (i - bg)] = Number(post_list[i]);
+    }
+    $.ajax({
+        url: "{% url 'get_post_brief' %}",
+        data: ask_list,
+        success: function(ret) {
+            for (var i in ret) {
+                $('.brief-list').append(createBrief(ret['' + i]));
+            }
+            var arr = $('.brief-title-inner, .brief-content');
+            for (var x = 0; x < arr.length; ++x) {
+                var s = arr[x].innerHTML;
+                for (var i in ci) {
+                    s = s.split(ci[i]).join("<span class='highlight'>" + ci[i] + "</span>");
+                }
+                arr[x].innerHTML = s;
+            }
+        }
+    });
+}
+function updPagination() {
+    $('.pagination').empty();
+    var blk = Math.floor((page - 1) / page_number);
+    var bg = blk * page_number + 1;
+    var ed = (blk + 1) * page_number;
+    if (page == bg && bg != 1) {
+        --bg;
+        --ed;
+    }
+    if (page == ed && ed != page_limit) {
+        ++bg;
+        ++ed;
+    }
+    if (ed > page_limit)
+        ed = page_limit;
+    var s = "";
+    if (page != 1)
+        s += "<li class='page_prev'><a href='#'>&lt;上一页</a></li>";
+
+    for (var i = bg; i <= ed; ++i) {
+        s += "<li id='page_" + i + "' the_id='" + i + "'" + (i == page ? " class='active'" : "") + "><a href='#'>" + i + "</a></li>";
+    }
+
+    if (page != page_limit)
+        s += "<li class='page_next'><a href='#'>下一页&gt;</a></li>";
+    $('.pagination').append(s);
+
+    if (page != 1)
+        $('.pagination .page_prev').click(function() {
+            page--;
+            updPagination();
+            updBrief();
+        });
+    if (page != page_limit)
+        $('.pagination .page_next').click(function() {
+            page++;
+            updPagination();
+            updBrief();
+        });
+    for (var i = bg; i <= ed; ++i) {
+        $('#page_' + i).click(function() {
+            page = $(this).attr('the_id');
+            updPagination();
+            updBrief();
+        });
+    }
+}
+$(document).ready(function(){
+    $.ajax({
+        url: "{% url 'search_team' %}",
+        data: {'wd': '{{ short_name }}'},
+        success: function(ret) {
+            $('#len').html(ret['len']);
+            ci = ret['word'];
+            post_list = ret['data'];
+            page_limit = Math.ceil(post_list.length / page_size);
+            page = 1;
+            updPagination();
+            updBrief();
+        }
+    });
+});
+</script>
+</body>
+</html>

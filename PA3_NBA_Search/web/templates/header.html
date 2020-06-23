@@ -1,0 +1,14 @@
+{% include 'bar.html' %}
+<link rel="stylesheet" type="text/css" href="/static/css/header.css">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img id="logo" src="/static/img/logo.jpeg" height="40" width="60" /></a>
+        </div>
+        <form id='search-form' class="navbar-form navbar-left" role="search" onsubmit="GoSubmit();" action="{% url 'search' %}" method="get" id="search_form">
+            <input type="text" name="wd" class="form-control" id="search_edit" autocomplete="off">
+            <button class="btn btn-default" type="submit" id="search-btn">搜索一下</button>
+        </form>
+    </div>
+</nav>
+

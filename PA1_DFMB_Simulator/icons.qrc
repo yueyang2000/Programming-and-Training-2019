@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file>icons/left.png</file>
+        <file>icons/right.png</file>
+        <file>sound/merge_finish.wav</file>
+        <file>sound/move.wav</file>
+        <file>sound/split_finish.wav</file>
+        <file>sound/split_stretch.wav</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("ul").on("mouseover", "div.show-div", function () {
+                $(this).next("div").css("display", "block");
+            })
+            $("ul").on("mouseout", "div.show-div", function () {
+                $(this).next("div").css("display", "none");
+            })
+        })
+    </script>
+    <style>
+        .hid-div{
+            display:none;
+        }
+        li{
+            border-top:2px dashed #808080;
+            width:700px;
+            text-align:left;
+            display:block;
+            font-size:20px;
+        }
+        ul{
+            list-style:none;
+        }
+        .body-div{
+             /*width:300px;
+            height:700px;*/
+        }
+        span{
+            display:inline-block;
+            background:#ff0000;
+            width:50px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+        }
+        a:hover{
+            cursor:pointer;
+        }
+        img{
+            width:120px;
+            height:180px;
+        }
+        .img-div{
+            float:left;
+        }
+        .text-div{
+            margin-left:10px;
+            float:left;
+        }
+        .hid-div::after{
+            content:"";
+            clear:both;
+            display:block;
+        }
+        .show-div{
+            display: inline-block;
+        }
+        div.dl{
+            display: inline-block;
+        }
+        div.dr{
+            display: inline-block;
+            margin-left:450px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="body-div" align="center">
+        <h1>球队热度榜</h1>
+        <ul id="list">
+            <li>
+                <span>1</span>
+                <div class ="show-div" >
+                    <div class="dl"  align="left"><a>{{name1}}</a></div>
+                    <div class="dr" align="right">{{heat1}}</div>
+                </div>
+                <div class="hid-div">
+                    <div class="img-div"><img src="{{photo1}}"/></div>
+                    <div class="text-div">{{text1}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<script>
+function createColumn(team,cnt){
+    var s='';
+    s += "<li><span>" + String(cnt) + "</span>";
+    s += "<div class ='show-div'><div class='dl'  align='left'><a href='{% url 'get_team' %}?id="+String(team['NID'])+"' target='_blank'> "+team['name']+"</a></div>";
+    s += "<div class='dr' align='right'>" + team['heat'] +"</div></div>";
+    s += "<div class='hid-div' style='display: none;'><div class='img-div'><img src='"+team['photo']+"'/></div>";
+    s += "<div class='text-div'>"+ team['info'] + "</div></div></li>";
+    return s;
+}
+$(document).ready(function(){
+    // team = {}
+    // team['NID'] = 10;
+    // team['name'] = '勇士';
+    // team['heat'] = 100;
+    // team['photo'] = '';
+    // team['info'] = 'test';
+    // $('#list').append(createColumn(team,1))
+    $.ajax({
+        url: "{% url 'get_heat'}",
+        success: function(ret){
+            teams = ret['data'];
+            var cnt = 1;
+            for (var team in teams){
+                $('#list').append(createColumn(team,cnt));
+                ++cnt;
+            }
+        }
+    })
+})
+</script>
+</body>
+</html>

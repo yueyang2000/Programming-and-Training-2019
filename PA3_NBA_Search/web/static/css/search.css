@@ -1,0 +1,16 @@
+.result {
+    color: gray;
+}
+
+.brief-title {
+    margin-bottom: 0px;
+}
+
+
+.brief-list h3 {
+    font-size: 25px;
+}
+
+.highlight {
+    color: #c00;
+}

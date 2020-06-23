@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="static/css/bar.css">
+<div class="c-nav" style="">
+  <div class="container navFlex">
+    <div class="flexItem show" style="">
+      <ul>
+        <li><a href="{% url 'index' %}">主页</a></li>
+        <li><a href="{% url 'rank' %}">球队热度榜</a></li>
+        <li><a href="{% url 'test' %}">test</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+//用于判断导航栏的状态
+var toggle = true;
+
+//导航栏按钮
+$('.btnImg').click(function() {
+  if (toggle) {
+    $('.btnImg').css("border", "1px solid #b0ccf3");
+    toggle = false
+  } else {
+    $('.btnImg').css("border", "1px solid transparent");
+    toggle = true;
+  }
+  $(".show").slideToggle(300);
+})
+
+//窗口大小发生改变
+$(window).resize(function() {
+  //获取窗口宽度
+  var windSize = $(window).width();
+
+  if (windSize > 576) {
+    $(".show").slideDown(0);
+  } else {
+    $(".show").slideUp(0);
+  }
+});
+</script>

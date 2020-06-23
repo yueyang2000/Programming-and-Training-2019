@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>球队热度榜</title>
+    <meta charset="utf-8" />
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("ul").on("mouseover", "div.show-div", function () {
+                $(this).next("div").css("display", "block");
+            })
+            $("ul").on("mouseout", "div.show-div", function () {
+                $(this).next("div").css("display", "none");
+            })
+        })
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
+    <link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+{% include 'header.html' %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/rank.css">
+    <div class="body-div" align="center">
+        <h1>球队热度榜</h1>
+        <ul id="list">
+        </ul>
+    </div>
+<div style="height:200px;">
+<script>
+function createColumn(team,cnt){
+    var s='';
+    s += "<li><span>" + String(cnt) + "</span>";
+    s += "<div class ='show-div'><div class='dl'  align='left'><a href='{% url 'get_team' %}?id="+String(team['NID'])+"' target='_blank'> "+team['name']+"</a></div>";
+    s += "<div class='dr' align='right'>" + team['heat'] +"</div></div>";
+    s += "<div class='hid-div' ><div class='img-div'><img src='"+team['photo']+"' align='middle'/></div>";
+    s += "<div class='text-div'>"+ team['info'] + "</div></div></li>";
+    return s;
+}
+$(document).ready(function(){
+    // team = {}
+    // team['NID'] = 10;
+    // team['name'] = '勇士';
+    // team['heat'] = 100;
+    // team['photo'] = '';
+    // team['info'] = 'test';
+    // $('#list').append(createColumn(team,1))
+    $.ajax({
+        url: "{% url 'get_heat' %}",
+        success: function(ret){
+            var cnt = 1;
+            teams = ret['data']
+            for (var i in teams){
+                $('#list').append(createColumn(teams[i],cnt));
+                ++cnt;
+            }
+        }
+    })
+})
+</script>
+</body>
+</html>
