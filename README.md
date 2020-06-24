@@ -1,5 +1,5 @@
 # Programming-and-Training-2019
-Programming and Training, THU CST, 2019 Summer.
+Programming and Training (程序设计训练), THU CST, 2019 Summer.
 
 
 
